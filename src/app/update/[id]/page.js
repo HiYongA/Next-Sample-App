@@ -13,7 +13,9 @@ export default function Update() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:9999/topics/" + id);
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}topics/${id}`
+        );
         const topic = await res.json();
         setTitle(topic.title);
         setBody(topic.body);
