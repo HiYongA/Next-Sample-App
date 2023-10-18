@@ -15,6 +15,8 @@ export default async function RootLayout({ children }) {
   //   next: { revalidate: 0 },
   // });
 
+  // NEXT_PUBLIC_ 접두사가 없으면 server component에서만 사용할 수 있고,
+  // client component에서는 사용할 수 없습니다.
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}topics`, {
     // 항상 최신 데이터를 가져오도록 캐시를 사용하지 않는 것을 지시하는 거임.
     cache: "no-cache",
